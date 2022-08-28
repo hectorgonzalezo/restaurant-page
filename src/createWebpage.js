@@ -1,4 +1,4 @@
-import pizzaImageUrl from './pizza.jpeg';
+import pizzaImageUrl from './assets/pizza.jpeg';
 import addFooter from './createFooter'
 const webpage = (function () {
     const body = document.querySelector('body');

@@ -1,4 +1,4 @@
-import logoUrl from './github-logo.png'
+import logoUrl from './assets/github-logo.png'
 function addFooter(location, projectName) {
 	const footer = document.createElement('footer');
 
