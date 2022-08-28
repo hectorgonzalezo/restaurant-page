@@ -6,7 +6,7 @@ const webpage = (function () {
     contentDiv.id = 'container'
     const header = document.createElement('header');
     const main = document.createElement('main');
-    
+
 
     //header elements
     const nameRestaurant = document.createElement('h1');
@@ -36,32 +36,48 @@ const webpage = (function () {
     infoArea.id = 'info-area'
 
     //infoArea elements
-    const infoHours = document.createElement('div');
-    infoHours.classList.add('hours');
-    infoHours.innerText = '10-2';
+    const infoTitle = document.createElement('h2');
+    infoTitle.innerText = 'Hours';
+    //table with hours
+    const hoursTable = document.createElement('table');
 
-    const infoLocation = document.createElement('div');
-    infoLocation.classList.add('location');
-    infoLocation.innerText = 'San Cristobal de las Casas, Chiapas, Mexico.';
+    const monToThurRow = document.createElement('tr');
+    const monToThurCol = document.createElement('td');
+    monToThurCol.innerText = 'Monday-Thursday';
+    const monToThurHours = document.createElement('td');
+    monToThurHours.innerText = '10AM-5PM';
+    monToThurRow.append(monToThurCol, monToThurHours)
 
-    const infoPhone = document.createElement('div');
-    infoPhone.classList.add('phone');
-    infoPhone.innerText = '967 631 7595';
+    const friToSatRow = document.createElement('tr');
+    const friToSatCol = document.createElement('td');
+    friToSatCol.innerText = 'Friday-Saturday';
+    const friToSatHours = document.createElement('td');
+    friToSatHours.innerText = '10AM-8PM';
+    friToSatRow.append(friToSatCol, friToSatHours)
 
-    
+
+    const sunRow = document.createElement('tr');
+    const sunCol = document.createElement('td');
+    sunCol.innerText = 'Sunday';
+    const sunHours = document.createElement('td');
+    sunHours.innerText = 'Closed';
+    sunRow.append(sunCol, sunHours)
+
+    hoursTable.append(monToThurRow, friToSatRow, sunRow)
+
 
     function render() {
         body.append(contentDiv)
         contentDiv.append(header, main);
         addFooter(body, 'restaurant-page');
+        heroArea.append(mainText, pizzaImg, buttonOrder)
         header.append(nameRestaurant, headerList);
-        heroArea.append(mainText, pizzaImg, buttonOrder);
-        infoArea.append(infoHours, infoLocation, infoPhone);
+        infoArea.append(infoTitle, hoursTable);
         main.append(heroArea, infoArea);
-        
+
     }
 
-    return {render}
+    return { render }
 })();
 
 function renderPage() {
