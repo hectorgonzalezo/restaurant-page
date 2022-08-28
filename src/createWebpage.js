@@ -42,11 +42,11 @@ const webpage = (function () {
 
     const infoLocation = document.createElement('div');
     infoLocation.classList.add('location');
-    infoLocation.innerText = 'SanCris';
+    infoLocation.innerText = 'San Cristobal de las Casas, Chiapas, Mexico.';
 
     const infoPhone = document.createElement('div');
     infoPhone.classList.add('phone');
-    infoPhone.innerText = '33asdfl;kajsdf;2943asdfas5';
+    infoPhone.innerText = '967 631 7595';
 
     
 

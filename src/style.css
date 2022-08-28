@@ -19,9 +19,10 @@
 body {
     font-family: 'Nobile' sans-serif;
     background-color: var(--color-background);
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 10fr 1fr;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 /* * {
@@ -29,15 +30,17 @@ body {
 } */
 
 #container {
-    height: max(80%, calc(100% - 50px));
+    margin-bottom: 0px;
+    flex: 1;
+    display: grid;
+    grid-template-rows: 80px 1fr;
 }
 
 
 header {
     display: flex;
-    /* grid-template-columns: 1fr 4fr; */
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     padding: 20px;
     background-color: var(--color-dark);
     color: var(--color-complementary-light)
@@ -46,7 +49,7 @@ header {
 
 
 header > ul {
-    justify-self:  end;
+    justify-self: end;
     margin-right:  30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -62,13 +65,14 @@ header > ul > li {
 }
 
 main {
+    --padding: max(30px, 5vh);
     color: var(--color-light);
-    padding: 10px 5vw 10px 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 10px;
-    height: 100%;
+    padding: var(--padding);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: var(--padding)
 }
 
 main > div {
@@ -80,7 +84,7 @@ main > div {
 
 #hero-area {
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) 2fr;
+    grid-template-columns: minmax(100px, 1fr) 2fr;
     grid-template-rows: 4fr 1fr;
     align-items: center;
     justify-items: center;
@@ -109,7 +113,6 @@ main > div {
 }
 
 footer {
-    position: relative;
     margin-top: auto;
     display: flex;
     align-items: center;
