@@ -12,9 +12,10 @@
     --color-background: #370617;
     --color-dark:  #353A1C;
     --color-medium-light: #848f52;
+    --color-medium-dark: #616b37;
     --color-light: #b7be94;
     --color-complementary-dark: #580808;
-    --color-complementary-light: #d37777;
+    --color-complementary-light: #aa5d5d;
 }
 body {
     font-family: 'Nobile' sans-serif;
@@ -40,7 +41,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: auto;
     padding: 20px;
     background-color: var(--color-dark);
     color: var(--color-complementary-light)
@@ -107,11 +108,54 @@ main > div {
     width: 300px;
 }
 
-
 #info-area{
-    /* background-color: var(--color-dark); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    justify-self: center;
 }
 
+#info-area > h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid;
+    table-layout: auto;
+    width: 300px;
+    font-size: 1.1rem;
+}
+
+table td:nth-child(1) {
+    text-align: right;
+}
+
+table td {
+    padding: 10px;
+}
+
+table tr {
+    color: var(--color-background);
+    font-size: 1.2rem;
+}
+
+table tr:first-child {
+    background-color: var(--color-medium-light);
+}
+
+table tr:nth-child(2){
+    background-color: var(--color-medium-dark);
+}
+
+table tr:nth-child(3) {
+    background-color: var(--color-medium-light);
+    color: var(--color-complementary-dark);
+}
 footer {
     margin-top: auto;
     display: flex;
