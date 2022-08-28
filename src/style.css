@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'Nobile';
-  src: url('./nobile-regular-webfont.woff2') format('woff2'),
-    url('./nobile-regular-webfont.woff') format('woff');
+  src: url('./assets/nobile-regular-webfont.woff2') format('woff2'),
+    url('./assets/nobile-regular-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
