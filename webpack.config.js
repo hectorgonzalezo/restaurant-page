@@ -6,7 +6,10 @@ module.exports = {
 	entry: {
 		index: './src/index.js',
 		createWebpage: './src/createWebpage.js',
+<<<<<<< HEAD
 		home: './src/home.js',
+=======
+>>>>>>> 140e01f (Create basic layout)
 	},
 	module: {
 		rules: [

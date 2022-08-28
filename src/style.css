@@ -1,6 +1,7 @@
 @import url('./reset.css');
 
 @font-face {
+<<<<<<< HEAD
     font-family: 'Nobile';
     src: url('./assets/nobile-regular-webfont.woff2') format('woff2'),
         url('./assets/nobile-regular-webfont.woff') format('woff');
@@ -46,10 +47,18 @@
     body #hero-area>button {
         grid-row: 3 / -1;
     }
+=======
+  font-family: 'Nobile';
+  src: url('./nobile-regular-webfont.woff2') format('woff2'),
+    url('./nobile-regular-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+>>>>>>> 140e01f (Create basic layout)
 }
 
 :root {
     --color-background: #370617;
+<<<<<<< HEAD
     --color-dark: #353A1C;
     --color-medium-dark: #616b37;
     --color-medium-light: #848f52;
@@ -67,6 +76,28 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
+=======
+    --color-dark:  #353A1C;
+    --color-medium-light: #848f52;
+    --color-medium-dark: #616b37;
+    --color-light: #b7be94;
+    --color-complementary-dark: #580808;
+    --color-complementary-light: #aa5d5d;
+}
+body {
+    font-family: 'Nobile' sans-serif;
+    background-color: var(--color-background);
+<<<<<<< HEAD
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10fr 1fr;
+>>>>>>> 140e01f (Create basic layout)
+=======
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+>>>>>>> 9c91ec1 (Fix issue that caused footer to overflow)
 }
 
 /* * {
@@ -74,15 +105,27 @@ body {
 } */
 
 #container {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c91ec1 (Fix issue that caused footer to overflow)
     margin-bottom: 0px;
     flex: 1;
     display: grid;
     grid-template-rows: 80px 1fr;
+<<<<<<< HEAD
+=======
+    height: max(80%, calc(100% - 50px));
+>>>>>>> 140e01f (Create basic layout)
+=======
+>>>>>>> 9c91ec1 (Fix issue that caused footer to overflow)
 }
 
 
 header {
     display: flex;
+<<<<<<< HEAD
+<<<<<<< HEAD
     justify-content: space-between;
     width: auto;
     padding: 0px 0px 0px 20px;
@@ -235,10 +278,76 @@ button:active {
 }
 
 #hero-area>button {
+=======
+    /* grid-template-columns: 1fr 4fr; */
+=======
+>>>>>>> 9c91ec1 (Fix issue that caused footer to overflow)
+    justify-content: space-between;
+    width: auto;
+    padding: 20px;
+    background-color: var(--color-dark);
+    color: var(--color-complementary-light)
+}
+
+
+
+header > ul {
+    justify-self: end;
+    margin-right:  30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px
+}
+
+header > ul > li {
+    width:  100px;
+}
+
+main {
+    --padding: max(30px, 5vh);
+    color: var(--color-light);
+    padding: var(--padding);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: var(--padding)
+}
+
+main > div {
+    background-color: var(--color-dark);
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 5px 5px 8px 3px black;
+}
+
+#hero-area {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 2fr;
+    grid-template-rows: 4fr 1fr;
+    align-items: center;
+    justify-items: center;
+    
+}
+#hero-area > h2 {
+    grid-column: 1 / 2;
+}
+#hero-area > img {
+    
+    grid-column: 2 / -1
+}
+
+#hero-area > button{
+>>>>>>> 140e01f (Create basic layout)
     grid-row: 2 / -1;
     grid-column: 1 / -1;
 }
 
+<<<<<<< HEAD
 #info-area {
     display: flex;
     flex-direction: column;
@@ -322,6 +431,65 @@ table tr:nth-child(3) {
 
 
 footer {
+=======
+#pizza-img {
+    width: 300px;
+}
+
+#info-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    justify-self: center;
+}
+
+#info-area > h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid;
+    table-layout: auto;
+    width: 300px;
+    font-size: 1.1rem;
+}
+
+table td:nth-child(1) {
+    text-align: right;
+}
+
+table td {
+    padding: 10px;
+}
+
+table tr {
+    color: var(--color-background);
+    font-size: 1.2rem;
+}
+
+table tr:first-child {
+    background-color: var(--color-medium-light);
+}
+
+table tr:nth-child(2){
+    background-color: var(--color-medium-dark);
+}
+
+table tr:nth-child(3) {
+    background-color: var(--color-medium-light);
+    color: var(--color-complementary-dark);
+}
+footer {
+<<<<<<< HEAD
+    position: relative;
+>>>>>>> 140e01f (Create basic layout)
+=======
+>>>>>>> 9c91ec1 (Fix issue that caused footer to overflow)
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -329,7 +497,11 @@ footer {
     height: 50px;
     width: 100%;
     gap: 2vw;
+<<<<<<< HEAD
     background-color: var(--color-dark);
+=======
+    background-color: grey;
+>>>>>>> 140e01f (Create basic layout)
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.5rem;
@@ -337,6 +509,7 @@ footer {
 
 #github-logo {
     height: 30px;
+<<<<<<< HEAD
 }
 
 
@@ -353,4 +526,6 @@ footer {
 @keyframes moveToPlace {
     from { transform : scale(0.3) translateY(3rem) translateX(2rem)}
     to   { transform : scale(1) translateY(0rem) translateX(0rem)} /* slide down to make room for advertisements */
+=======
+>>>>>>> 140e01f (Create basic layout)
 }

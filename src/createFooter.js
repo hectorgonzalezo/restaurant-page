@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import logoUrl from './assets/github-logo.png'
+=======
+import logoUrl from './github-logo.png'
+>>>>>>> 140e01f (Create basic layout)
 function addFooter(location, projectName) {
 	const footer = document.createElement('footer');
 
