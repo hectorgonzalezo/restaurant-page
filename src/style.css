@@ -1,16 +1,56 @@
 @import url('./reset.css');
 
 @font-face {
-  font-family: 'Nobile';
-  src: url('./assets/nobile-regular-webfont.woff2') format('woff2'),
-    url('./assets/nobile-regular-webfont.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'Nobile';
+    src: url('./assets/nobile-regular-webfont.woff2') format('woff2'),
+        url('./assets/nobile-regular-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 800px) {
+
+    body header {
+        flex-direction: column;
+    }
+    body #container {
+        display: grid;
+        grid-template-rows: 100px 1fr;
+    }
+    
+    body .header-option{
+        height: 100%;
+    }
+
+    body #hero-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+        width: 60%;
+        min-width: 400px;
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    body #hero-area>h2 {
+        grid-row: 1 / 2
+    }
+
+    body #hero-area>img {
+        grid-column: 1 /2;
+        grid-row: 2 / 3;
+        width: 400px;
+    }
+
+    body #hero-area>button {
+        grid-row: 3 / -1;
+    }
 }
 
 :root {
     --color-background: #370617;
-    --color-dark:  #353A1C;
+    --color-dark: #353A1C;
     --color-medium-dark: #616b37;
     --color-medium-light: #848f52;
     --color-light: #e2e7ca;
@@ -19,8 +59,9 @@
     --color-complementary2-dark: #4a0928;
     --color-complementary2-light: #df62af;
 }
+
 body {
-    font-family: 'Nobile' sans-serif;
+    font-family: 'Nobile'sans-serif;
     background-color: var(--color-background);
     min-height: 100vh;
     width: 100vw;
@@ -44,22 +85,22 @@ header {
     display: flex;
     justify-content: space-between;
     width: auto;
-    padding:0px 20px 0px 20px;
+    padding: 0px 0px 0px 20px;
     background-color: var(--color-dark);
     color: var(--color-complementary1-light);
     align-items: center;
 }
 
-header > h1 {
+header>h1 {
     font-size: 3rem;
     text-shadow: var;
     min-width: 220px;
 }
 
 
-header > ul {
+header>ul {
     justify-self: end;
-    margin-right:  30px;
+    margin-right: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     list-style: none;
@@ -72,7 +113,7 @@ header > ul {
 }
 
 .header-option {
-    width:  100px;
+    width: 100px;
     background-color: var(--color-complementary1-light);
     font-size: 1.5rem;
     color: var(--color-dark);
@@ -113,13 +154,14 @@ main {
     gap: var(--padding);
     background-image: url('./assets/pizza.jpeg');
     background-size: cover;
+    background-position: center;
 }
 
 main.fade {
     animation: fadeIn 1s linear;
 }
 
-main > div {
+main>div {
     background-color: rgba(44, 70, 18, 0.749);
     border-radius: 1rem;
     padding: 30px;
@@ -130,12 +172,14 @@ main > div {
     gap: 20px;
 }
 
-main > div p {
+main>div p {
     justify-self: start;
 }
-main > div > h3 {
+
+main>div>h3 {
     grid-column: 1 / -1;
 }
+
 main h2,
 main h3 {
     font-size: 2rem;
@@ -167,33 +211,34 @@ button:active {
     top: 1px;
     box-shadow: 1px 1px 2px black;
 }
+
 #hero-area {
     grid-template-columns: minmax(300px, 1fr) 400px;
     grid-template-rows: 4fr 1fr;
-    
-   width: 80%; 
-   min-width: 700px;
-   max-width: 1000px;
-   gap: 10px;
+
+    width: 80%;
+    min-width: 700px;
+    max-width: 1000px;
+    gap: 10px;
 }
 
-#hero-area > h2 {
+#hero-area>h2 {
     grid-column: 1 / 2;
-    grid-row:  1 / 2;
+    grid-row: 1 / 2;
 }
 
-#hero-area > img {
+#hero-area>img {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     width: 400px;
 }
 
-#hero-area > button{
+#hero-area>button {
     grid-row: 2 / -1;
     grid-column: 1 / -1;
 }
 
-#info-area{
+#info-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,7 +248,7 @@ button:active {
     justify-self: center;
 }
 
-#info-area > h2 {
+#info-area>h2 {
     font-size: 2rem;
     text-align: center;
 }
@@ -233,7 +278,7 @@ table tr:first-child {
     background-color: var(--color-medium-light);
 }
 
-table tr:nth-child(2){
+table tr:nth-child(2) {
     background-color: var(--color-medium-dark);
 }
 
@@ -259,7 +304,7 @@ table tr:nth-child(3) {
 }
 
 #contact-area h3 {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
 }
 
 #contact-area iframe {
@@ -295,6 +340,11 @@ footer {
 
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -2,6 +2,7 @@ import addFooter from './createFooter';
 import home from './home.js';
 import menu from './menu.js'
 import contact from './contact.js'
+import pizzaIcon from './assets/pizza-icon.png'
 
 const webpage = (function () {
     const body = document.querySelector('body');
@@ -10,6 +11,14 @@ const webpage = (function () {
     const header = document.createElement('header');
     const main = document.createElement('main');
     main.classList.add('fade');
+
+    function _createTabIcon(){//add pizza icon to broswer tab
+        const head = document.querySelector('head');
+        const icon = document.createElement('link');
+        icon.setAttribute('rel', 'icon')
+        icon.href = pizzaIcon;
+        head.append(icon)
+    }
 
 
     //header elements
@@ -70,6 +79,7 @@ const webpage = (function () {
 
 
     function render() {
+        _createTabIcon();
         body.append(contentDiv);
         _createHeader(); 
         contentDiv.append(header, main);
