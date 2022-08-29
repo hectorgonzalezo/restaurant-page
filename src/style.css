@@ -14,10 +14,10 @@
     --color-medium-dark: #616b37;
     --color-medium-light: #848f52;
     --color-light: #b7be94;
-    --color-complementary1-dark: #bc591b;
-    --color-complementary1-light: #f59960;
-    --color-complementary2-dark: #4a0945;
-    --color-complementary2-light: #cf6af7;
+    --color-complementary1-dark: #a64616;
+    --color-complementary1-light: #e4956d;
+    --color-complementary2-dark: #4a0928;
+    --color-complementary2-light: #df62af;
 }
 body {
     font-family: 'Nobile' sans-serif;
@@ -76,7 +76,7 @@ header > ul {
     background-color: var(--color-complementary1-light);
     font-size: 1.5rem;
     color: var(--color-dark);
-    height: 80%;
+    height: 70%;
     align-self: end;
     display: flex;
     align-items: center;
@@ -85,13 +85,17 @@ header > ul {
 
 .header-option:hover {
     background-color: var(--color-complementary1-dark);
+    color: var(--color-light);
     cursor: pointer;
+    padding-top: 10px;
 }
 
 .header-option.highlighted {
     background-color: var(--color-complementary1-dark);
     color: var(--color-light);
     cursor: auto;
+    padding-top: 10px;
+    pointer-events: none;
 }
 
 main {
@@ -209,7 +213,7 @@ table td {
 }
 
 table tr {
-    color: var(--color-background);
+    color: var(--color-complementary2-dark);
     font-size: 1.2rem;
 }
 
@@ -223,7 +227,6 @@ table tr:nth-child(2){
 
 table tr:nth-child(3) {
     background-color: var(--color-medium-light);
-    color: var(--color-complementary-dark);
 }
 footer {
     margin-top: auto;
