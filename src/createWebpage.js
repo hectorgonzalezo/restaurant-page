@@ -9,6 +9,7 @@ const webpage = (function () {
     contentDiv.id = 'container';
     const header = document.createElement('header');
     const main = document.createElement('main');
+    main.classList.add('fade');
 
 
     //header elements
@@ -33,31 +34,45 @@ const webpage = (function () {
     function _removeAllChildNodes(parent) {
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
-        }
+        };
     }
+
+    function _allowMainFadeIN() {//allows for retriggering of css animation
+        const mainFade = document.querySelector('.fade');
+        mainFade.addEventListener('animationend', () => {
+            main.classList.remove('fade');
+        })
+    }
+
 
     function render() {
         body.append(contentDiv)
-        const headerOptions =_createHeader();
+        _createHeader();
         contentDiv.append(header, main);
         addFooter(body, 'restaurant-page');
         home.render(main);
+        _allowMainFadeIN();
     }
 
+   
     function updateMain(choice) {
+        main.classList.add('fade');//star fadeIn of choice
         _removeAllChildNodes(main);
         switch (choice) {
             case 'Home':
                 home.render(main);
+                //these have to be inside the switch statement
+                //for some reason they dont work otherwise
+                // main.classList.add('fade');
                 break;
             case 'Menu':
                 menu.render(main);
+                // main.classList.add('fade');
                 break;
             case 'Contact':
                 contact.render(main);
                 break;
             default:
-                console.log(typeof(choice));
                 break;
         }
     }

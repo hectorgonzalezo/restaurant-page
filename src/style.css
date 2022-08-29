@@ -86,7 +86,10 @@ main {
     justify-content: center;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 1fr;
-    gap: var(--padding)
+    gap: var(--padding);
+}
+main.fade {
+    animation: fadeIn 1s linear;
 }
 
 main > div {
@@ -185,4 +188,10 @@ footer {
 
 #github-logo {
     height: 30px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
