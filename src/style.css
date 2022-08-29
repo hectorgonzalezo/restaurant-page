@@ -44,7 +44,8 @@ header {
     width: auto;
     padding: 20px;
     background-color: var(--color-dark);
-    color: var(--color-complementary-light)
+    color: var(--color-complementary-light);
+    align-items: center;
 }
 
 
@@ -55,14 +56,26 @@ header > ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     list-style: none;
+    align-self: stretch;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 10px
 }
 
-header > ul > li {
+.header-option {
     width:  100px;
+    background-color: var(--color-complementary-dark);
+    color: var(--color-light);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-option:hover {
+    background-color: blue;
+    cursor: pointer;
 }
 
 main {

@@ -1,6 +1,15 @@
 import './style.css';
-import renderPage from './createWebpage.js'
+import webpage from './createWebpage.js'
 
-renderPage();
+webpage.render('home');
 
-console.log('asdf');
+
+function addOptionsListeners(){
+    const headerOptions = document.querySelectorAll('.header-option');
+    headerOptions.forEach((option) => {
+        const data = option.getAttribute('data');
+        option.addEventListener('click', () => webpage.updateMain(data))
+    })
+};
+
+addOptionsListeners();
