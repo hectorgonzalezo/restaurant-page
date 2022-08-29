@@ -31,30 +31,42 @@ const webpage = (function () {
         header.append(nameRestaurant, headerList);
 };
 
-    function _removeAllChildNodes(parent) {
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
-        };
-    }
 
-    function _allowMainFadeIN() {//allows for retriggering of css animation
+    function _addOptionsListeners() {
+        const headerOptions = document.querySelectorAll('.header-option');
+        headerOptions.forEach(
+            (option) => {
+                const data = option.getAttribute('data');
+        option.addEventListener('click', () => webpage.updateMain(data));
+            }
+        );
+    };
+
+
+    function _clearMain() {
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        };
+    };
+
+    function _allowMainFadeIn() {//allows for retriggering of css animation
         const mainFade = document.querySelector('.fade');
         mainFade.addEventListener('animationend', () => {
             main.classList.remove('fade');
         })
-    }
+    };
 
+    //highlights the chosen option on the webpage and deactivates eventListener
     function _highlightOption(choice) {
         const headerOptions = document.querySelectorAll('.header-option');
         headerOptions.forEach((option) => {
-            console.log(option.getAttribute('data'))
             if (option.getAttribute('data') == choice) {
                 option.classList.add('highlighted')
             } else{
                 option.classList.remove('highlighted')
             }
         });
-    }
+    };
 
 
     function render() {
@@ -64,13 +76,14 @@ const webpage = (function () {
         _highlightOption('Home');
         addFooter(body, 'restaurant-page');
         home.render(main);
-        _allowMainFadeIN();
-    }
+        _allowMainFadeIn(); 
+        _addOptionsListeners();
+    };
 
    
     function updateMain(choice) {
         main.classList.add('fade');//star fadeIn of choice
-        _removeAllChildNodes(main);
+        _clearMain();
         _highlightOption(choice);//highlights choice on header
         switch (choice) {
             case 'Home':
@@ -85,7 +98,7 @@ const webpage = (function () {
             default:
                 break;
         }
-    }
+    };
 
     return { render, updateMain }
 })();
