@@ -76,7 +76,7 @@ const webpage = (function () {
         _highlightOption('Home');
         addFooter(body, 'restaurant-page');
         home.render(main);
-        _allowMainFadeIn(); 
+        _allowMainFadeIn(); ``
         _addOptionsListeners();
     };
 
