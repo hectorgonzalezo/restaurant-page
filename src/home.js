@@ -17,7 +17,7 @@ const home = (function () {
     infoArea.id = 'info-area'
 
     //infoArea elements
-    const infoTitle = document.createElement('h2');
+    const infoTitle = document.createElement('h3');
     infoTitle.innerText = 'Hours';
 
     //table with hours
