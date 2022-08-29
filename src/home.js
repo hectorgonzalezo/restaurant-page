@@ -1,15 +1,15 @@
-import pizzaImageUrl from './assets/pizza.jpeg';
- 
+import chefImgUrl from './assets/chef.jpeg'
+
 const home = (function () {
 
     //main elements
     const heroArea = document.createElement('div')
     heroArea.id = 'hero-area'
     const mainText = document.createElement('h2');
-    mainText.innerText = 'The best New Haven style pizza in San Cristobal de Las casas'
-    const pizzaImg = document.createElement('img');
-    pizzaImg.src = pizzaImageUrl;
-    pizzaImg.id = 'pizza-img';
+    mainText.innerText = 'The best Italian style pizza' + 
+    ' in San Cristobal de Las Casas, Chiapas, Mexico.'
+    const chefImg = document.createElement('img');
+    chefImg.src = chefImgUrl
     const buttonOrder = document.createElement('button');
     buttonOrder.innerText = 'Order online';
 
@@ -47,7 +47,7 @@ const home = (function () {
     hoursTable.append(monToThurRow, friToSatRow, sunRow)
 
     function render(main) {
-        heroArea.append(mainText, pizzaImg, buttonOrder)
+        heroArea.append(mainText, chefImg, buttonOrder)
         infoArea.append(infoTitle, hoursTable);
         main.append(heroArea, infoArea);
     }

@@ -25,11 +25,11 @@ const webpage = (function () {
              //this attribute is used by the option eventListener
             headerOption.setAttribute('data', option);
             headerOption.innerText = option;
-            
-            headerList.append(headerOption);
-        });
+
+            headerList.append(headerOption)
+        })
         header.append(nameRestaurant, headerList);
-    };
+};
 
     function _removeAllChildNodes(parent) {
         while (parent.firstChild) {
@@ -44,11 +44,24 @@ const webpage = (function () {
         })
     }
 
+    function _highlightOption(choice) {
+        const headerOptions = document.querySelectorAll('.header-option');
+        headerOptions.forEach((option) => {
+            console.log(option.getAttribute('data'))
+            if (option.getAttribute('data') == choice) {
+                option.classList.add('highlighted')
+            } else{
+                option.classList.remove('highlighted')
+            }
+        });
+    }
+
 
     function render() {
-        body.append(contentDiv)
-        _createHeader();
+        body.append(contentDiv);
+        _createHeader(); 
         contentDiv.append(header, main);
+        _highlightOption('Home');
         addFooter(body, 'restaurant-page');
         home.render(main);
         _allowMainFadeIN();
@@ -58,16 +71,13 @@ const webpage = (function () {
     function updateMain(choice) {
         main.classList.add('fade');//star fadeIn of choice
         _removeAllChildNodes(main);
+        _highlightOption(choice);//highlights choice on header
         switch (choice) {
             case 'Home':
                 home.render(main);
-                //these have to be inside the switch statement
-                //for some reason they dont work otherwise
-                // main.classList.add('fade');
                 break;
             case 'Menu':
                 menu.render(main);
-                // main.classList.add('fade');
                 break;
             case 'Contact':
                 contact.render(main);
